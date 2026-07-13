@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>When Plasmas Quit: Engineering for the 10.3 GJ Disruption — Kronos Fusion Energy</title><style>
+:root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
+.page{max-width:820px;margin:0 auto;padding:56px 28px 40px}
+.brand{font-family:Verdana,Arial,sans-serif;font-size:11px;letter-spacing:3px;color:var(--navy);
+  border-bottom:2px solid var(--navy);padding-bottom:10px;display:flex;justify-content:space-between}
+.brand b{color:var(--acc)}
+.eyebrow{font-family:Verdana,Arial,sans-serif;font-size:10px;letter-spacing:2.5px;color:var(--acc);
+  text-transform:uppercase;margin:34px 0 10px}
+h1{font-size:33px;line-height:1.18;font-weight:700;text-wrap:balance}
+.sub{font-size:16.5px;color:var(--mut);font-style:italic;margin:12px 0 4px;text-wrap:balance}
+.lead{font-size:17px;margin:26px 0 6px;border-left:3px solid var(--acc);padding-left:16px}
+h2{font-family:Verdana,Arial,sans-serif;font-size:13.5px;letter-spacing:.6px;text-transform:uppercase;
+  color:var(--navy);margin:30px 0 8px}
+p{margin:10px 0;font-size:15.5px}
+.nums{background:var(--wash);border:1px solid var(--line);border-top:3px solid var(--acc);
+  padding:16px 18px;margin:28px 0}
+.nums h3{font-family:Verdana,Arial,sans-serif;font-size:10.5px;letter-spacing:2px;color:var(--acc);
+  text-transform:uppercase;margin-bottom:8px}
+.nums table{width:100%;border-collapse:collapse;font-size:14px}
+.nums td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.nums td:last-child{text-align:right;font-family:Verdana,Arial,sans-serif;font-size:13px;white-space:nowrap}
+.gap{border:1px dashed var(--mut);padding:14px 16px;margin:26px 0;font-size:14.5px}
+.gap b{font-family:Verdana,Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--navy);
+  text-transform:uppercase;display:block;margin-bottom:6px}
+.cta{background:var(--navy);color:#f2ede2;padding:18px 20px;margin:30px 0 0;font-size:14.5px}
+.cta a{color:#e8c476;text-decoration:none}
+.foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+@media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><div class="page">
+<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 11 / 40</span></div>
+<div class="eyebrow">Series A — The Machine</div>
+<h1>When Plasmas Quit: Engineering for the 10.3 GJ Disruption</h1>
+<div class="sub">We sized the worst day in the plant&#x27;s life before sizing the best one.</div>
+<p class="lead">At 43 MA, an unmitigated MetroVolt disruption would release 10.3 GJ of stored energy — 4.8 GJ magnetic plus 5.5 GJ thermal — and pull ~590 MN of vertical load. Those numbers are in the deposit because pretending otherwise is how fusion loses trust.</p>
+<h2>The science</h2><p>The disruption ledger (KX-24) quantifies the full event: stored-energy partition, a ~23 ms current quench, vertical displacement forces, and a runaway-electron avalanche gain that is flagged 'high' — which is why shattered-pellet injection (SPI) mitigation is a requirement, not an option, with the reduced DREAM deck deposited for flagship confirmation.</p><p>Negative triangularity helps twice: the ELM-free edge removes the most frequent disruption trigger class, and the mode-trade study shows the lower-current operating branch eases the ledger to ≈9 GJ. Structural verdicts are computed at ≥2× yield criteria against the ~590 MN envelope.</p><h2>Why it matters</h2><p>Utilities do not fear plasma physics; they fear unbudgeted downtime. A disruption case with numbers, mitigation hardware, and structural margins is an insurable event rather than an existential one. Publishing the 'high avalanche' flag is deliberate: it converts our hardest transient into a specified, testable engineering requirement.</p>
+<div class="nums"><h3>The numbers</h3><table><tr><td>Unmitigated stored energy</td><td>10.3 GJ (4.8 magnetic + 5.5 thermal)</td></tr><tr><td>Vertical load</td><td>≈590 MN (≥2× yield structural criterion)</td></tr><tr><td>Current quench</td><td>≈23 ms</td></tr><tr><td>Mitigation</td><td>SPI — required, deck deposited (S30)</td></tr><tr><td>Eased case</td><td>≈9 GJ at 37.1 MA branch</td></tr></table></div>
+<div class="gap"><b>Straight answers</b>Runaway-electron avalanche gain is high at this current; the full DREAM confirmation is a Tier-2 deposited deck pending HPC execution. The requirement is stated before the confirmation exists.</div>
+<div class="cta">Every figure in this paper traces to the openly deposited 81-simulation programme
+(S01&ndash;S81) behind the Kronos MetroVolt four-paper design series &mdash; data and code at
+<a href="https://doi.org/10.5281/zenodo.21248916">DOI 10.5281/zenodo.21248916</a> (CC BY 4.0). Read the series, run the code, check us.</div>
+<div class="foot">Kronos MetroVolt is a conceptual design study. Quantitative values are
+simulation-derived and carry the feasibility gates stated in the series; Tier-2 flagship-code
+confirmations are deposited as runnable decks pending HPC execution. This document is
+informational and is not an offer of securities. &copy; 2026 Kronos Fusion Energy, Los Angeles.</div>
+</div></body></html>
