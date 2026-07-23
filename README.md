@@ -1,7 +1,7 @@
 # Website Publications — MetroVolt Whitepaper Library
 
 Forty short whitepapers for the Kronos Fusion Energy website — 60% science / 40% marketing —
-each traceable to the certified canon of the MetroVolt four-paper series and its deposited
+each traceable to the certified canon of the MetroVolt design paper (a single combined manuscript in four parts) and its deposited
 81-simulation programme (S01–S81; DOI 10.5281/zenodo.21248916).
 
 ## Contents
