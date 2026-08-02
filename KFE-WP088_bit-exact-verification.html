@@ -33,10 +33,10 @@ p{margin:10px 0;font-size:15.5px}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
 @media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body><div class="page">
-<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 088 / 100</span></div>
+<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 088 / 104</span></div>
 <div class="eyebrow">Method, Safety &amp; Trust</div>
 <h1>Bit-Exact: Verifying Against the Prior Evaluator</h1>
-<div class="sub">When the burner&#x27;s new solver replaced the old one, it first reproduced the old one exactly &amp;mdash; then corrected it.</div>
+<div class="sub">When the burner's new solver replaced the old one, it first reproduced the old one exactly &mdash; then corrected it.</div>
 <p class="lead">The burner's independent physics evaluator was validated by reproducing the prior evaluator bit-for-bit before it was trusted to correct it: a maximum relative error of 2.3 x 10^-15 across 72 values. Only then did the new solver's corrections carry weight.</p>
 <h2>The science</h2><p>The new evaluator transcribed the prior model verbatim as one code path and ran it against every stored case, matching to machine precision &mdash; 2.3 x 10^-15 across 72 values including temperature, fusion power, radiation, and gain. Having proven it reproduces the old physics exactly, its independent physics (neutron budget from cross sections, synchrotron charged, Pastukhov confinement) could then be trusted where it disagreed.</p><h2>Why it matters</h2><p>A new model that cannot reproduce the old one is not a correction; it is a different guess. Establishing bit-exact reproduction first is what lets the burner's corrections &mdash; the neutron fraction, the directed fraction, the D-T Q_E literal &mdash; stand as genuine improvements rather than disagreements.</p>
 <div class="nums"><h3>The numbers</h3><table><tr><td>Reproduction error</td><td>2.3 x 10^-15 (72 values)</td></tr><tr><td>Method</td><td>prior model transcribed verbatim</td></tr><tr><td>Then added</td><td>independent physics (cross sections, synchrotron, Pastukhov)</td></tr><tr><td>Corrections</td><td>neutron fraction, directed fraction, D-T literal</td></tr><tr><td>Standard</td><td>reproduce, then correct</td></tr></table></div>
