@@ -33,10 +33,10 @@ p{margin:10px 0;font-size:15.5px}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
 @media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body><div class="page">
-<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 034 / 100</span></div>
+<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 034 / 104</span></div>
 <div class="eyebrow">The Burner — Aegis &amp; MetroVolt</div>
 <h1>Solved, Not Assumed: The Electron Temperature</h1>
-<div class="sub">The burner&#x27;s electron temperature is an output of the power balance, and it is not equal to the ion temperature.</div>
+<div class="sub">The burner's electron temperature is an output of the power balance, and it is not equal to the ion temperature.</div>
 <p class="lead">In the burner's reference solve, the electron temperature is 91.8 keV &mdash; computed from the electron power balance, not assumed, and deliberately not set equal to the 100 keV ion temperature. Solving for it rather than pinning it is a small discipline with large consequences.</p>
 <h2>The science</h2><p>D-3He plasmas deposit fast-particle energy preferentially on electrons, so assuming T_e = T_i would misstate both radiation and confinement. The burner solves the electron power balance explicitly, returning T_e = 91.8 keV against T_i = 100 keV. Radiation, confinement, and the converter spec all follow from the solved value.</p><h2>Why it matters</h2><p>Because synchrotron radiation and the confining potential both depend on electron temperature, getting it from physics rather than assumption is what keeps the ledger honest. It is one of the corrections the burner's independent solve made to the prior evaluator.</p>
 <div class="nums"><h3>The numbers</h3><table><tr><td>Electron temperature T_e</td><td>91.8 keV (solved)</td></tr><tr><td>Ion temperature T_i</td><td>100 keV (free)</td></tr><tr><td>Relationship</td><td>T_e &lt; T_i (not assumed equal)</td></tr><tr><td>Source</td><td>electron power balance</td></tr><tr><td>Feeds</td><td>radiation, confinement, converter spec</td></tr></table></div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>An Experiment, Not a Power Plant: The Burner&#x27;s Honest Baseline — Kronos Fusion Energy</title><style>
+<title>A Reproducible Closing Point, and the One Requirement It Rests On — Kronos Fusion Energy</title><style>
 :root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
@@ -33,14 +33,14 @@ p{margin:10px 0;font-size:15.5px}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
 @media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body><div class="page">
-<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 042 / 100</span></div>
+<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 042 / 104</span></div>
 <div class="eyebrow">The Burner — Aegis &amp; MetroVolt</div>
-<h1>An Experiment, Not a Power Plant: The Burner&#x27;s Honest Baseline</h1>
-<div class="sub">At its reference point the burner does not make net electricity, and the record says so on the first page.</div>
-<p class="lead">The burner's baseline is an experiment, not a power plant. At Q_E 0.63 it consumes more electricity than it produces, and the design record leads with that fact rather than burying it. Net electricity is a gated destination, not a present claim.</p>
-<h2>The science</h2><p>Q_plasma at the reference point is 1.008 &mdash; the plasma barely breaks even &mdash; and the engineering gain, after recirculating the plug and converter losses, is 0.632. Closure requires clearing named gates: the plug density ratio on the confinement side and electron direct conversion on the harvest side.</p><h2>Why it matters</h2><p>Calling the baseline what it is &mdash; an experiment with measurable gates &mdash; is the founder's stated posture, and it is what lets the closing numbers, when they come, be believed. A concept that overstates its baseline forfeits trust on everything after it.</p>
-<div class="nums"><h3>The numbers</h3><table><tr><td>Plasma gain Q_plasma</td><td>1.008 (barely break-even)</td></tr><tr><td>Engineering gain Q_E</td><td>0.632 (net deficit)</td></tr><tr><td>Baseline framing</td><td>experiment, not power plant</td></tr><tr><td>Closure gates</td><td>plug ratio + electron DEC</td></tr><tr><td>Posture</td><td>gates measurable, not assumed</td></tr></table></div>
-<div class="gap"><b>Straight answers</b>The burner is honestly below net electricity today; its closure rests on two named, testable gates. The programme states them as gates, not assumptions, and keeps the below-unity baseline in the record.</div>
+<h1>A Reproducible Closing Point, and the One Requirement It Rests On</h1>
+<div class="sub">The burner has a locked, reproducible closing point (Q_E 1.31) &mdash; honest that its closure is a requirement, not yet demonstrated.</div>
+<p class="lead">The burner's closing point is locked and reproduces from the deposit's own solver: engineering gain Q_E 1.31 at helium-3 fraction 0.30. It is also honest about its price. At the reference end-plug density ratio of 10 the machine does not close (Q_E 0.63, net -160 MWe); reaching Q_E 1.31 needs a plug density ratio near 16, a condition specified but not demonstrated.</p>
+<h2>The science</h2><p>On the locked config the engineering gain is Q_E 1.31 and the neutron fraction 5.44%, both length-independent; net electric then scales with central-cell length (+104 / +850 / +2832 MWe at 55 / 440 / 1400 m). Closure is contingent on an end-plug density of 4.16&times;10&sup2;&sup1; per cubic metre &mdash; 347&times; above what the GDT mirror has measured. Earlier Q_E figures of 1.002, 1.191 and 1.825 did not reproduce from the code and are withdrawn.</p><h2>Why it matters</h2><p>A closing point you can rerun, that names the one hard thing it assumes, is worth more than a flattering number that does not reproduce. The physics gives a reproducible net-positive point; whether it can be built hinges on the plug density, which the record flags as the single largest open item rather than booking it as solved.</p>
+<div class="nums"><h3>The numbers</h3><table><tr><td>Design-point gain Q_E</td><td>1.31 (reproducible, length-independent)</td></tr><tr><td>Neutron fraction</td><td>5.44%</td></tr><tr><td>Reference n_p/n_c=10</td><td>does NOT close (Q_E 0.63, -160 MWe)</td></tr><tr><td>Closure condition</td><td>plug ratio ~16 (347x GDT), not demonstrated</td></tr><tr><td>Withdrawn</td><td>Q_E 1.002 / 1.191 / 1.825 (non-reproducible)</td></tr></table></div>
+<div class="gap"><b>Straight answers</b>The closing point reproduces on the deposit's own solver (M-45); closure is REQUIREMENT-class (M-47), contingent on the end-plug density and never presented as demonstrated. The non-reproducible Q_E 1.002 / 1.191 / 1.825 are withdrawn.</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to the openly deposited Kronos simulation programme and design-point records (CC BY 4.0).
 Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values

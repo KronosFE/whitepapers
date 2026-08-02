@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Closure Boundary: Helium-3 Fraction At Least 0.15 — Kronos Fusion Energy</title><style>
+<title>The Closure Window: Helium-3 Fraction 0.20 to 0.43 — Kronos Fusion Energy</title><style>
 :root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
@@ -33,14 +33,14 @@ p{margin:10px 0;font-size:15.5px}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
 @media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body><div class="page">
-<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 037 / 100</span></div>
+<div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 037 / 104</span></div>
 <div class="eyebrow">The Burner — Aegis &amp; MetroVolt</div>
-<h1>The Closure Boundary: Helium-3 Fraction At Least 0.15</h1>
-<div class="sub">There is a sharp fuel-mix threshold below which the burner cannot close &amp;mdash; and it is published.</div>
-<p class="lead">The burner closes only when the helium-3 fraction of the fuel is at least 0.15. Below that, the charged-power budget cannot fund the end losses; at and above it, net electricity becomes reachable. The boundary is a computed threshold, stated as one.</p>
-<h2>The science</h2><p>Sweeping the helium-3 fraction, the engineering gain crosses unity at x_He3 = 0.15, reaching Q_E 1.191 with a positive net output at that point. The threshold exists because raising the helium-3 fraction lifts the charged-power share and cuts the neutron fraction together &mdash; both feed the same budget.</p><h2>Why it matters</h2><p>A published closure boundary tells a fuel planner exactly how helium-3-rich the mix must be, and tells a physicist exactly which mixes to test. It is the fuel-side companion to the plug-ratio requirement on the confinement side.</p>
-<div class="nums"><h3>The numbers</h3><table><tr><td>Closure threshold</td><td>x_He3 &amp;ge; 0.15</td></tr><tr><td>Gain at threshold</td><td>Q_E 1.191</td></tr><tr><td>Net at threshold</td><td>+128.5 MWe</td></tr><tr><td>Below threshold</td><td>does not close</td></tr><tr><td>Reference mix</td><td>x_He3 0.30 (comfortably above)</td></tr></table></div>
-<div class="gap"><b>Straight answers</b>The closure boundary is a computed fuel-mix threshold; reaching net electricity also still requires the plug density ratio on the confinement side. Both gates must pass &mdash; the boundary is necessary, not sufficient.</div>
+<h1>The Closure Window: Helium-3 Fraction 0.20 to 0.43</h1>
+<div class="sub">There is a fuel-mix window in which the burner closes &mdash; bounded on both sides, and published.</div>
+<p class="lead">On the locked closing config the burner closes across a helium-3 fraction window of about 0.20 to 0.43. Below 0.20 the charged-power budget cannot fund the end losses; above ~0.43 the fuel no longer reacts hard enough. The design point sits inside it at x = 0.30. The window is a computed result, stated as one.</p>
+<h2>The science</h2><p>Sweeping the helium-3 fraction at the closing plug ratio (n_p/n_c=16), the machine is net-positive from about x=0.20 to x=0.43, with the design point at x=0.30 giving Q_E 1.31. Across the window the neutron fraction falls from 9.53% to 2.77%. Above ~0.43 the reaction rate drops too far and closure is lost &mdash; a redesigned machine, not a fuel change, would be needed for near-aneutronic operation.</p><h2>Why it matters</h2><p>A published closure window tells a fuel planner exactly how helium-3-rich the mix must be, and tells a physicist exactly which mixes to test. It is the fuel-side companion to the plug-density requirement on the confinement side.</p>
+<div class="nums"><h3>The numbers</h3><table><tr><td>Closure window</td><td>x_He3 in [0.20, ~0.43]</td></tr><tr><td>Design point</td><td>x_He3 0.30 (Q_E 1.31)</td></tr><tr><td>Neutron fraction across window</td><td>9.53% -&gt; 2.77%</td></tr><tr><td>Above ~0.43</td><td>closure lost (redesign needed)</td></tr><tr><td>Also required</td><td>plug density ratio ~16 (not demonstrated)</td></tr></table></div>
+<div class="gap"><b>Straight answers</b>The closure window is a computed fuel-mix result on the locked config (M-46); reaching net electricity also requires the end-plug density (M-47), which is specified, not demonstrated. Both conditions must hold. Earlier x&ge;0.15 / Q_E 1.191 numbers are WITHDRAWN.</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to the openly deposited Kronos simulation programme and design-point records (CC BY 4.0).
 Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values
