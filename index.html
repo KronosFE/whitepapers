@@ -236,6 +236,24 @@ ol.papers a:hover{color:var(--acc)}
 }
 @media (max-width: 900px) { .kfe-cols { grid-template-columns: repeat(2, 1fr); gap: 28px; } }
 @media (max-width: 560px) { .kfe-cols { grid-template-columns: 1fr; } }
+
+/* === MATCH LIVE kronosfusionenergy.com HEADER (blend + muted nav + outlined CTA) === */
+.kfe-embed .kfe-header{background:transparent!important;backdrop-filter:none!important;
+  border-bottom:1px solid transparent!important;box-shadow:none!important;
+  transition:background .4s ease,backdrop-filter .4s ease,border-color .4s ease!important}
+.kfe-embed .kfe-header.kfe-scrolled{background:rgba(20,26,34,.92)!important;
+  backdrop-filter:blur(18px)!important;border-bottom:1px solid rgba(231,235,242,.07)!important}
+.kfe-embed .kfe-nav-link,.kfe-embed .kfe-nav-trigger{color:rgba(224,229,235,.6)!important;
+  font-size:12px!important;font-weight:500!important;letter-spacing:1.8px!important;
+  text-transform:uppercase!important;background:transparent!important;border-bottom:none!important;
+  text-decoration:none!important}
+.kfe-embed .kfe-nav-link:hover,.kfe-embed .kfe-nav-trigger:hover,
+.kfe-embed .kfe-nav li.kfe-open>.kfe-nav-trigger{color:#E7EBF2!important;background:transparent!important}
+.kfe-embed .kfe-header .kfe-cta{background:transparent!important;color:#D4AD5C!important;
+  border:1px solid #D4AD5C!important;border-radius:0!important;padding:9px 16px!important;
+  font-size:10px!important;letter-spacing:2.5px!important;text-transform:uppercase!important;box-shadow:none!important}
+.kfe-embed .kfe-header .kfe-cta:hover{background:rgba(212,173,92,.12)!important;color:#E2C57E!important;opacity:1!important}
+
 </style>
 
 <!-- ── HEADER ──────────────────────────────────────────────────────────── -->
@@ -534,6 +552,11 @@ the record with era labels. Informational only; not an offer of securities.
     });
   }
 })();
+
+(function(){var h=document.querySelector('.kfe-embed .kfe-header');if(!h)return;
+var f=function(){h.classList.toggle('kfe-scrolled',(window.scrollY||document.documentElement.scrollTop)>8);};
+f();window.addEventListener('scroll',f,{passive:true});})();
+
 </script>
 <!-- ══ END KRONOS HEADER + FOOTER EMBED ═══════════════════════════════ -->
 </body></html>
