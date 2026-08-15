@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Breeder Physics Closed; Burner Closing Point Locked on One Requirement — Kronos Fusion Energy</title><style>
+<title>Breeder Physics Closed; Burner Closing Point Locked on One Requirement — Kronos Fusion Energy</title><meta name="description" content="The breeder's power balance is closed and reproduces; the burner has a reproducible closing point contingent on a single named requirement."><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="https://www.kronosfusionenergy.com/whitepapers/KFE-WP101_physics-closes-rest-is-engineering.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Kronos Fusion Energy"><meta property="og:title" content="Breeder Physics Closed; Burner Closing Point Locked on One Requirement"><meta property="og:description" content="The breeder's power balance is closed and reproduces; the burner has a reproducible closing point contingent on a single named requirement."><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Breeder Physics Closed; Burner Closing Point Locked on One Requirement", "description": "The breeder's power balance is closed and reproduces; the burner has a reproducible closing point contingent on a single named requirement.", "url": "https://www.kronosfusionenergy.com/whitepapers/KFE-WP101_physics-closes-rest-is-engineering.html", "author": {"@type": "Organization", "name": "Kronos Fusion Energy"}, "publisher": {"@type": "Organization", "name": "Kronos Fusion Energy", "url": "https://www.kronosfusionenergy.com"}, "datePublished": "2026", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Mode D2/M Evolution \u2014 Cleaner and More Durable"}, "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": true}</script><style>
 :root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
@@ -31,18 +31,34 @@ p{margin:10px 0;font-size:15.5px}
 .cta{background:var(--navy);color:#f2ede2;padding:18px 20px;margin:30px 0 0;font-size:14.5px}
 .cta a{color:#e8c476;text-decoration:none}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
-@media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-</style></head><body><div class="page">
+.sitebar{background:#232c39;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;
+  padding:11px 22px;font-family:Verdana,Arial,sans-serif;font-size:13px}
+.sitebar a{color:#e8ebef;text-decoration:none}
+.sitebar .sb-home{font-weight:700;letter-spacing:2px;color:#fff;font-size:11.5px}
+.sitebar .sb-links{display:flex;flex-wrap:wrap;gap:16px}
+.sitebar a:hover{color:#e8c476}
+@media(max-width:600px){.sitebar{gap:8px 14px;padding:10px 16px}.sitebar .sb-links{gap:13px}}
+.clip{margin:22px 0;text-align:center}
+.clip video{width:100%;max-width:620px;height:auto;display:inline-block;background:#0e1420;border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:6px;box-shadow:0 6px 22px rgba(11,23,36,.13)}
+.clip figcaption{font-size:12px;color:var(--mut);margin-top:7px}
+.films{margin:30px 0 6px}
+.films h3{font-size:14px;letter-spacing:.5px;color:var(--navy);margin:0 0 10px;text-transform:uppercase}
+.ytwrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:9px;border:1px solid var(--line);background:#000}
+.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+@media print{.sitebar,.films{display:none}.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><nav class="sitebar"><a class="sb-home" href="https://www.kronosfusionenergy.com/">KRONOS &middot; FUSION ENERGY</a><span class="sb-links"><a href="https://www.kronosfusionenergy.com/">Home</a><a href="https://www.kronosfusionenergy.com/learn/">Learn</a><a href="https://www.kronosfusionenergy.com/technical/">Technical</a><a href="https://www.kronosfusionenergy.com/technical/motion.html">Motion</a><a href="https://www.kronosfusionenergy.com/whitepapers">Whitepapers</a><a href="https://www.kronosfusionenergy.com/publications">Publications</a><a href="https://www.kronosfusionenergy.com/3D_Model">3D&nbsp;Model</a><a href="https://www.kronosfusionenergy.com/Physics_Validation_Simulation">Live&nbsp;Sim</a></span></nav><div class="page">
 <div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 101 / 104</span></div>
 <div class="eyebrow">The Mode D2/M Evolution — Cleaner and More Durable</div>
 <h1>Breeder Physics Closed; Burner Closing Point Locked on One Requirement</h1>
 <div class="sub">The breeder's power balance is closed and reproduces; the burner has a reproducible closing point contingent on a single named requirement.</div>
 <p class="lead">The two machines are at different, honestly stated places. The breeder's physics is closed: it reaches Q 3.424 at 88.7 MW and breeds 4 kg of tritium a year, closing without a wall, and it reproduces from the deposited config. The burner has a reproducible closing point too &mdash; Q_E 1.31 at helium-3 fraction 0.30 &mdash; but that closure is REQUIREMENT-class: it rests on an end-plug density near 347 times what has been measured, specified rather than demonstrated.</p>
+<figure class="clip"><video autoplay muted loop playsinline preload="metadata" aria-label="Kronos clip"><source src="https://pub-6f4141e515994eaf98b678a16ccbf603.r2.dev/a4-three-machines.mp4" type="video/mp4"></video><figcaption>Kronos clip &middot; The Mode D2/M Evolution — Cleaner and More Durable</figcaption></figure>
 <h2>The science</h2><p>Breeder H01-H05 (Q 3.424, closes_nowall) reproduces at config 22021. The burner's Q_E 1.31 / f_n 5.44% closing point (M-45) reproduces on the deposit's own solver, but only at plug density ratio n_p/n_c ~16; at the reference ratio 10 it does not close (Q_E 0.63, net -160 MWe). The plug density is the single largest open item (M-47, H53). The environmental items &mdash; economics, public dose, waste class &mdash; are engineering and procurement with known solutions.</p><h2>Why it matters</h2><p>Honesty about where each machine stands is the load-bearing claim. The breeder's physics is done; the burner has a reproducible net-positive point whose realization hinges on one hard, named confinement requirement. Neither is oversold, and the earlier non-reproducible burner gains (Q_E 1.002 / 1.191 / 1.825) are withdrawn rather than defended.</p>
 <div class="nums"><h3>The numbers</h3><table><tr><td>Breeder physics</td><td>Q 3.424, 88.7 MW, closes no-wall (frozen, reproduces)</td></tr><tr><td>Burner closing point</td><td>Q_E 1.31, f_n 5.44% (reproducible)</td></tr><tr><td>Burner caveat</td><td>requirement-class: plug ~16 (347x GDT), not demonstrated</td></tr><tr><td>Reference n_p/n_c=10</td><td>does NOT close (Q_E 0.63)</td></tr><tr><td>Withdrawn</td><td>burner Q_E 1.002 / 1.191 / 1.825 (non-reproducible)</td></tr></table></div>
 <div class="gap"><b>Straight answers</b>Breeder closure is frozen and reproduces; the burner closing point (M-45) reproduces but is requirement-class (M-47), never presented as demonstrated. The capital number, margins, lunar He-3, and the plug-density requirement stay explicitly open.</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to the openly deposited Kronos simulation programme and design-point records (CC BY 4.0).
-Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
+Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a>
+&middot; <a href="https://www.kronosfusionenergy.com/publications">Read the formal papers &amp; open data</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values
 are simulation-derived and carry the feasibility gates named in the text; superseded values are kept
 in the record with era labels. This document is informational and is not an offer of securities.

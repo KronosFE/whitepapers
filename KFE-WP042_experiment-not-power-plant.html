@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A Reproducible Closing Point, and the One Requirement It Rests On — Kronos Fusion Energy</title><style>
+<title>A Reproducible Closing Point, and the One Requirement It Rests On — Kronos Fusion Energy</title><meta name="description" content="The burner has a locked, reproducible closing point (Q_E 1.31) &mdash; honest that its closure is a requirement, not yet demonstrated."><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="https://www.kronosfusionenergy.com/whitepapers/KFE-WP042_experiment-not-power-plant.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Kronos Fusion Energy"><meta property="og:title" content="A Reproducible Closing Point, and the One Requirement It Rests On"><meta property="og:description" content="The burner has a locked, reproducible closing point (Q_E 1.31) &mdash; honest that its closure is a requirement, not yet demonstrated."><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "A Reproducible Closing Point, and the One Requirement It Rests On", "description": "The burner has a locked, reproducible closing point (Q_E 1.31) &mdash; honest that its closure is a requirement, not yet demonstrated.", "url": "https://www.kronosfusionenergy.com/whitepapers/KFE-WP042_experiment-not-power-plant.html", "author": {"@type": "Organization", "name": "Kronos Fusion Energy"}, "publisher": {"@type": "Organization", "name": "Kronos Fusion Energy", "url": "https://www.kronosfusionenergy.com"}, "datePublished": "2026", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Burner \u2014 Aegis & MetroVolt"}, "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": true}</script><style>
 :root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
@@ -31,18 +31,34 @@ p{margin:10px 0;font-size:15.5px}
 .cta{background:var(--navy);color:#f2ede2;padding:18px 20px;margin:30px 0 0;font-size:14.5px}
 .cta a{color:#e8c476;text-decoration:none}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
-@media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-</style></head><body><div class="page">
+.sitebar{background:#232c39;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;
+  padding:11px 22px;font-family:Verdana,Arial,sans-serif;font-size:13px}
+.sitebar a{color:#e8ebef;text-decoration:none}
+.sitebar .sb-home{font-weight:700;letter-spacing:2px;color:#fff;font-size:11.5px}
+.sitebar .sb-links{display:flex;flex-wrap:wrap;gap:16px}
+.sitebar a:hover{color:#e8c476}
+@media(max-width:600px){.sitebar{gap:8px 14px;padding:10px 16px}.sitebar .sb-links{gap:13px}}
+.clip{margin:22px 0;text-align:center}
+.clip video{width:100%;max-width:620px;height:auto;display:inline-block;background:#0e1420;border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:6px;box-shadow:0 6px 22px rgba(11,23,36,.13)}
+.clip figcaption{font-size:12px;color:var(--mut);margin-top:7px}
+.films{margin:30px 0 6px}
+.films h3{font-size:14px;letter-spacing:.5px;color:var(--navy);margin:0 0 10px;text-transform:uppercase}
+.ytwrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:9px;border:1px solid var(--line);background:#000}
+.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+@media print{.sitebar,.films{display:none}.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><nav class="sitebar"><a class="sb-home" href="https://www.kronosfusionenergy.com/">KRONOS &middot; FUSION ENERGY</a><span class="sb-links"><a href="https://www.kronosfusionenergy.com/">Home</a><a href="https://www.kronosfusionenergy.com/learn/">Learn</a><a href="https://www.kronosfusionenergy.com/technical/">Technical</a><a href="https://www.kronosfusionenergy.com/technical/motion.html">Motion</a><a href="https://www.kronosfusionenergy.com/whitepapers">Whitepapers</a><a href="https://www.kronosfusionenergy.com/publications">Publications</a><a href="https://www.kronosfusionenergy.com/3D_Model">3D&nbsp;Model</a><a href="https://www.kronosfusionenergy.com/Physics_Validation_Simulation">Live&nbsp;Sim</a></span></nav><div class="page">
 <div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 042 / 104</span></div>
 <div class="eyebrow">The Burner — Aegis &amp; MetroVolt</div>
 <h1>A Reproducible Closing Point, and the One Requirement It Rests On</h1>
 <div class="sub">The burner has a locked, reproducible closing point (Q_E 1.31) &mdash; honest that its closure is a requirement, not yet demonstrated.</div>
 <p class="lead">The burner's closing point is locked and reproduces from the deposit's own solver: engineering gain Q_E 1.31 at helium-3 fraction 0.30. It is also honest about its price. At the reference end-plug density ratio of 10 the machine does not close (Q_E 0.63, net -160 MWe); reaching Q_E 1.31 needs a plug density ratio near 16, a condition specified but not demonstrated.</p>
+<figure class="clip"><video autoplay muted loop playsinline preload="metadata" aria-label="Kronos clip"><source src="https://pub-6f4141e515994eaf98b678a16ccbf603.r2.dev/burner-hero-tandem-mirror.mp4" type="video/mp4"></video><figcaption>Kronos clip &middot; The Burner — Aegis &amp; MetroVolt</figcaption></figure>
 <h2>The science</h2><p>On the locked config the engineering gain is Q_E 1.31 and the neutron fraction 5.44%, both length-independent; net electric then scales with central-cell length (+104 / +850 / +2832 MWe at 55 / 440 / 1400 m). Closure is contingent on an end-plug density of 4.16&times;10&sup2;&sup1; per cubic metre &mdash; 347&times; above what the GDT mirror has measured. Earlier Q_E figures of 1.002, 1.191 and 1.825 did not reproduce from the code and are withdrawn.</p><h2>Why it matters</h2><p>A closing point you can rerun, that names the one hard thing it assumes, is worth more than a flattering number that does not reproduce. The physics gives a reproducible net-positive point; whether it can be built hinges on the plug density, which the record flags as the single largest open item rather than booking it as solved.</p>
 <div class="nums"><h3>The numbers</h3><table><tr><td>Design-point gain Q_E</td><td>1.31 (reproducible, length-independent)</td></tr><tr><td>Neutron fraction</td><td>5.44%</td></tr><tr><td>Reference n_p/n_c=10</td><td>does NOT close (Q_E 0.63, -160 MWe)</td></tr><tr><td>Closure condition</td><td>plug ratio ~16 (347x GDT), not demonstrated</td></tr><tr><td>Withdrawn</td><td>Q_E 1.002 / 1.191 / 1.825 (non-reproducible)</td></tr></table></div>
 <div class="gap"><b>Straight answers</b>The closing point reproduces on the deposit's own solver (M-45); closure is REQUIREMENT-class (M-47), contingent on the end-plug density and never presented as demonstrated. The non-reproducible Q_E 1.002 / 1.191 / 1.825 are withdrawn.</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to the openly deposited Kronos simulation programme and design-point records (CC BY 4.0).
-Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
+Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a>
+&middot; <a href="https://www.kronosfusionenergy.com/publications">Read the formal papers &amp; open data</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values
 are simulation-derived and carry the feasibility gates named in the text; superseded values are kept
 in the record with era labels. This document is informational and is not an offer of securities.

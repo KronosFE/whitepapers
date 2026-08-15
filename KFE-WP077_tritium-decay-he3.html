@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stockpile That Ripens: Tritium Decay to Helium-3 — Kronos Fusion Energy</title><style>
+<title>Stockpile That Ripens: Tritium Decay to Helium-3 — Kronos Fusion Energy</title><meta name="description" content="Every gram of tritium is a slow helium-3 factory &mdash; and the rate is a known physical constant."><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="https://www.kronosfusionenergy.com/whitepapers/KFE-WP077_tritium-decay-he3.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Kronos Fusion Energy"><meta property="og:title" content="Stockpile That Ripens: Tritium Decay to Helium-3"><meta property="og:description" content="Every gram of tritium is a slow helium-3 factory &mdash; and the rate is a known physical constant."><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Stockpile That Ripens: Tritium Decay to Helium-3", "description": "Every gram of tritium is a slow helium-3 factory &mdash; and the rate is a known physical constant.", "url": "https://www.kronosfusionenergy.com/whitepapers/KFE-WP077_tritium-decay-he3.html", "author": {"@type": "Organization", "name": "Kronos Fusion Energy"}, "publisher": {"@type": "Organization", "name": "Kronos Fusion Energy", "url": "https://www.kronosfusionenergy.com"}, "datePublished": "2026", "isPartOf": {"@type": "CreativeWorkSeries", "name": "The Fuel Cycle \u2014 Tritium & Helium-3"}, "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": true}</script><style>
 :root{--ink:#101724;--mut:#5a6472;--acc:#b8882e;--line:#d9dce2;--wash:#f7f6f2;--navy:#12233f}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.62}
@@ -31,18 +31,34 @@ p{margin:10px 0;font-size:15.5px}
 .cta{background:var(--navy);color:#f2ede2;padding:18px 20px;margin:30px 0 0;font-size:14.5px}
 .cta a{color:#e8c476;text-decoration:none}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
-@media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-</style></head><body><div class="page">
+.sitebar{background:#232c39;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;
+  padding:11px 22px;font-family:Verdana,Arial,sans-serif;font-size:13px}
+.sitebar a{color:#e8ebef;text-decoration:none}
+.sitebar .sb-home{font-weight:700;letter-spacing:2px;color:#fff;font-size:11.5px}
+.sitebar .sb-links{display:flex;flex-wrap:wrap;gap:16px}
+.sitebar a:hover{color:#e8c476}
+@media(max-width:600px){.sitebar{gap:8px 14px;padding:10px 16px}.sitebar .sb-links{gap:13px}}
+.clip{margin:22px 0;text-align:center}
+.clip video{width:100%;max-width:620px;height:auto;display:inline-block;background:#0e1420;border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:6px;box-shadow:0 6px 22px rgba(11,23,36,.13)}
+.clip figcaption{font-size:12px;color:var(--mut);margin-top:7px}
+.films{margin:30px 0 6px}
+.films h3{font-size:14px;letter-spacing:.5px;color:var(--navy);margin:0 0 10px;text-transform:uppercase}
+.ytwrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:9px;border:1px solid var(--line);background:#000}
+.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+@media print{.sitebar,.films{display:none}.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><nav class="sitebar"><a class="sb-home" href="https://www.kronosfusionenergy.com/">KRONOS &middot; FUSION ENERGY</a><span class="sb-links"><a href="https://www.kronosfusionenergy.com/">Home</a><a href="https://www.kronosfusionenergy.com/learn/">Learn</a><a href="https://www.kronosfusionenergy.com/technical/">Technical</a><a href="https://www.kronosfusionenergy.com/technical/motion.html">Motion</a><a href="https://www.kronosfusionenergy.com/whitepapers">Whitepapers</a><a href="https://www.kronosfusionenergy.com/publications">Publications</a><a href="https://www.kronosfusionenergy.com/3D_Model">3D&nbsp;Model</a><a href="https://www.kronosfusionenergy.com/Physics_Validation_Simulation">Live&nbsp;Sim</a></span></nav><div class="page">
 <div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER 077 / 104</span></div>
 <div class="eyebrow">The Fuel Cycle — Tritium &amp; Helium-3</div>
 <h1>Stockpile That Ripens: Tritium Decay to Helium-3</h1>
 <div class="sub">Every gram of tritium is a slow helium-3 factory &mdash; and the rate is a known physical constant.</div>
 <p class="lead">Tritium decays into helium-3 at a fixed rate &mdash; about 0.42 litres of helium-3 per gram of tritium per year. A tritium stockpile is therefore a helium-3 source that ripens on its own, which is one of the ways the breeder seeds the burners' fuel.</p>
+<figure class="clip"><video autoplay muted loop playsinline preload="metadata" aria-label="Kronos clip"><source src="https://pub-6f4141e515994eaf98b678a16ccbf603.r2.dev/fuel-cycle-loop.mp4" type="video/mp4"></video><figcaption>Kronos clip &middot; The Fuel Cycle — Tritium &amp; Helium-3</figcaption></figure>
 <h2>The science</h2><p>Tritium's 12.3-year half-life means a stockpile continuously converts to helium-3. The Kronos record carries the corrected, deposited accrual figure of 0.42 L of helium-3 per gram of tritium per year. Terrestrial tritium-decay stockpiles are thus a real, if slow, helium-3 source that requires no new physics to exploit.</p><h2>Why it matters</h2><p>Decay accrual is the most reliable helium-3 source there is, because it is just physics running on its own clock. It is one leg of a staged supply strategy &mdash; stockpile decay, in-plant breeding, and external reserves &mdash; that is resilient to any single source disappointing.</p>
 <div class="nums"><h3>The numbers</h3><table><tr><td>Accrual rate</td><td>~0.42 L He-3 / g tritium / yr</td></tr><tr><td>Mechanism</td><td>tritium decay (12.3-yr half-life)</td></tr><tr><td>Source type</td><td>terrestrial stockpiles</td></tr><tr><td>New physics required</td><td>none</td></tr><tr><td>Role</td><td>one leg of staged supply</td></tr></table></div>
 <div class="gap"><b>Straight answers</b>The decay accrual is a known physical rate carried in the deposited fuel-cycle record; it is a partial, reliable supply leg, not a complete solution &mdash; the burners' full need still depends on additional sources.</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to the openly deposited Kronos simulation programme and design-point records (CC BY 4.0).
-Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
+Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a>
+&middot; <a href="https://www.kronosfusionenergy.com/publications">Read the formal papers &amp; open data</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values
 are simulation-derived and carry the feasibility gates named in the text; superseded values are kept
 in the record with era labels. This document is informational and is not an offer of securities.

@@ -38,7 +38,9 @@ type per KRONOS_DESIGN_SYSTEM.md section 2/3 (web paper family).
 
 Run:  python3 build_whitepapers.py   -> writes 100 HTML files + index.html next to this script.
 """
-import os, html, re
+import os, html, re, json
+SITE = "https://www.kronosfusionenergy.com"
+CLIPS_BASE = "https://pub-6f4141e515994eaf98b678a16ccbf603.r2.dev/"
 
 # Escape <, >, and bare & (not part of a valid HTML entity), while PRESERVING
 # author-written entities like &mdash; &sup2; &ge; in short fields (titles, subs,
@@ -82,22 +84,38 @@ p{margin:10px 0;font-size:15.5px}
 .cta{background:var(--navy);color:#f2ede2;padding:18px 20px;margin:30px 0 0;font-size:14.5px}
 .cta a{color:#e8c476;text-decoration:none}
 .foot{font-size:11.5px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
-@media print{.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.sitebar{background:#232c39;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;
+  padding:11px 22px;font-family:Verdana,Arial,sans-serif;font-size:13px}
+.sitebar a{color:#e8ebef;text-decoration:none}
+.sitebar .sb-home{font-weight:700;letter-spacing:2px;color:#fff;font-size:11.5px}
+.sitebar .sb-links{display:flex;flex-wrap:wrap;gap:16px}
+.sitebar a:hover{color:#e8c476}
+@media(max-width:600px){.sitebar{gap:8px 14px;padding:10px 16px}.sitebar .sb-links{gap:13px}}
+.clip{margin:22px 0;text-align:center}
+.clip video{width:100%;max-width:600px;height:auto;display:inline-block;background:#0e1420;border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:6px;box-shadow:0 6px 22px rgba(11,23,36,.13)}
+.clip figcaption{font-size:12px;color:var(--mut);margin-top:7px}
+.films{margin:30px 0 6px}
+.films h3{font-size:14px;letter-spacing:.5px;color:var(--navy);margin:0 0 10px;text-transform:uppercase}
+.ytwrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:9px;border:1px solid var(--line);background:#000}
+.ytwrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+@media print{.sitebar,.films{display:none}.page{padding:20px}.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 """
 
 PAGE = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title} — Kronos Fusion Energy</title><style>{css}</style></head><body><div class="page">
+<title>{title} — Kronos Fusion Energy</title>{head}<style>{css}</style></head><body><nav class="sitebar"><a class="sb-home" href="https://www.kronosfusionenergy.com/">KRONOS &middot; FUSION ENERGY</a><span class="sb-links"><a href="https://www.kronosfusionenergy.com/">Home</a><a href="https://www.kronosfusionenergy.com/learn/">Learn</a><a href="https://www.kronosfusionenergy.com/technical/">Technical</a><a href="https://www.kronosfusionenergy.com/technical/motion.html">Motion</a><a href="https://www.kronosfusionenergy.com/whitepapers">Whitepapers</a><a href="https://www.kronosfusionenergy.com/publications">Publications</a><a href="https://www.kronosfusionenergy.com/3D_Model">3D&nbsp;Model</a><a href="https://www.kronosfusionenergy.com/Physics_Validation_Simulation">Live&nbsp;Sim</a></span></nav><div class="page">
 <div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER {n:03d} / {total}</span></div>
 <div class="eyebrow">{series}</div>
 <h1>{title}</h1>
 <div class="sub">{sub}</div>
 <p class="lead">{lead}</p>
+{clip}
 {body}
 <div class="nums"><h3>The numbers</h3><table>{numrows}</table></div>
 <div class="gap"><b>Straight answers</b>{gap}</div>
 <div class="cta">Kronos is the fusion company that shows its work. Every figure here traces to {deposit}.
-Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a></div>
+Read the series, run the code, check us. &mdash; <a href="index.html">All whitepapers</a>
+&middot; <a href="https://www.kronosfusionenergy.com/publications">Read the formal papers &amp; open data</a></div>
 <div class="foot">Conceptual design and simulation study; no machine has been built. Quantitative values
 are simulation-derived and carry the feasibility gates named in the text; superseded values are kept
 in the record with era labels. This document is informational and is not an offer of securities.
@@ -105,13 +123,36 @@ in the record with era labels. This document is informational and is not an offe
 <a class="back" href="index.html">&larr; Back to the whitepaper library</a>
 </div></body></html>"""
 
+def dstrip(s):
+    return re.sub("<[^>]+>", "", str(s)).replace('"', "&quot;")
+
+def seo_head(p):
+    url = "%s/whitepapers/KFE-WP%03d_%s.html" % (SITE, p["n"], p["slug"])
+    desc = dstrip(p["sub"])
+    jl = json.dumps({"@context": "https://schema.org", "@type": "Article",
+        "headline": dstrip(p["title"]), "description": desc, "url": url,
+        "author": {"@type": "Organization", "name": "Kronos Fusion Energy"},
+        "publisher": {"@type": "Organization", "name": "Kronos Fusion Energy", "url": SITE},
+        "datePublished": "2026", "isPartOf": {"@type": "CreativeWorkSeries", "name": dstrip(p["series"])},
+        "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": True})
+    return ('<meta name="description" content="%s">' % desc
+        + '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">'
+        + '<link rel="canonical" href="%s">' % url
+        + '<meta property="og:type" content="article"><meta property="og:site_name" content="Kronos Fusion Energy">'
+        + '<meta property="og:title" content="%s"><meta property="og:description" content="%s">' % (dstrip(p["title"]), desc)
+        + '<script type="application/ld+json">%s</script>' % jl)
+
 def render(p, total):
     body = "".join("<h2>%s</h2>" % esc(h) + "".join("<p>%s</p>" % t for t in ps)
                    for h, ps in p["secs"])
     rows = "".join("<tr><td>%s</td><td>%s</td></tr>" % (esc(k), esc(v))
                    for k, v in p["nums"])
+    cn = SERIES_CLIP.get(p["series"], "")
+    clip = ('<figure class="clip"><video autoplay muted loop playsinline preload="metadata" '
+            'aria-label="Kronos clip"><source src="%s%s.mp4" type="video/mp4"></video>'
+            '<figcaption>Kronos clip &middot; %s</figcaption></figure>' % (CLIPS_BASE, cn, esc(p["series"]))) if cn else ""
     return PAGE.format(css=CSS, n=p["n"], total=total, series=esc(p["series"]),
-                       title=esc(p["title"]), sub=esc(p["sub"]),
+                       title=esc(p["title"]), sub=esc(p["sub"]), head=seo_head(p), clip=clip,
                        lead=p["lead"], body=body, numrows=rows, gap=p["gap"], deposit=DEPOSIT)
 
 A = "Hyperion — The Breeder"
@@ -121,6 +162,14 @@ D = "Direct Energy Conversion & Power Handling"
 E = "The Fuel Cycle — Tritium & Helium-3"
 F = "Method, Safety & Trust"
 G = "The Mode D2/M Evolution — Cleaner and More Durable"
+
+# series -> silent hero clip (from the Kronos clip library, in ./clips/)
+SERIES_CLIP = {A: "g4-radial-build", B: "burner-hero-tandem-mirror", C: "tritium-decay-clock",
+               D: "d5-direct-conversion", E: "fuel-cycle-loop", F: "control-stack", G: "a4-three-machines"}
+# YouTube uploads-playlist embed (channel UCDgJMXqppQHrHWIa8qvO1ww -> uploads UU...); auto-updates.
+FILMS = ('<div class="films"><h3>Watch the films</h3>'
+  '<div class="ytwrap"><iframe src="https://www.youtube.com/embed/videoseries?list=UUDgJMXqppQHrHWIa8qvO1ww" '
+  'title="Kronos Fusion Energy films" loading="lazy" allowfullscreen></iframe></div></div>')
 
 def wp(series, slug, title, sub, lead, secs, nums, gap):
     return dict(series=series, slug=slug, title=title, sub=sub, lead=lead, secs=secs, nums=nums, gap=gap)
@@ -2475,7 +2524,7 @@ def build_index():
     body = "".join(blocks)
     return """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Whitepaper Library — Kronos Fusion Energy</title><style>{css}</style></head><body><div class="page">
+<title>Whitepaper Library — Kronos Fusion Energy</title><meta name="description" content="The Kronos Fusion Energy whitepaper library — {total} design-and-physics papers on the compact spherical-tokamak breeder and the D-He3 tandem-mirror generator, each traceable to open, reproducible deposits."><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="https://www.kronosfusionenergy.com/whitepapers"><meta property="og:type" content="website"><meta property="og:site_name" content="Kronos Fusion Energy"><meta property="og:title" content="Kronos Fusion Energy — Whitepaper Library"><style>{css}</style></head><body><nav class="sitebar"><a class="sb-home" href="https://www.kronosfusionenergy.com/">KRONOS &middot; FUSION ENERGY</a><span class="sb-links"><a href="https://www.kronosfusionenergy.com/">Home</a><a href="https://www.kronosfusionenergy.com/learn/">Learn</a><a href="https://www.kronosfusionenergy.com/technical/">Technical</a><a href="https://www.kronosfusionenergy.com/technical/motion.html">Motion</a><a href="https://www.kronosfusionenergy.com/whitepapers">Whitepapers</a><a href="https://www.kronosfusionenergy.com/publications">Publications</a><a href="https://www.kronosfusionenergy.com/3D_Model">3D&nbsp;Model</a><a href="https://www.kronosfusionenergy.com/Physics_Validation_Simulation">Live&nbsp;Sim</a></span></nav><div class="page">
 <div class="brand"><span>KRONOS <b>FUSION</b> ENERGY</span><span>WHITEPAPER LIBRARY</span></div>
 <div class="eyebrow">Design &amp; Physics Series &middot; {total} papers</div>
 <h1>The Kronos Whitepaper Library</h1>
@@ -2483,12 +2532,14 @@ def build_index():
 Hyperion breeder, the Aegis and MetroVolt burner, and the method that ties them together. Every paper
 leads with the physics, names its gates, and traces to deposited data and code. No economics, no
 forecasts &mdash; design and low-neutron, on the record.</p>
+<figure class="clip"><video autoplay muted loop playsinline preload="metadata" aria-label="The Kronos platform"><source src="https://pub-6f4141e515994eaf98b678a16ccbf603.r2.dev/a4-three-machines.mp4" type="video/mp4"></video><figcaption>Three machines, one purpose &mdash; the Kronos platform.</figcaption></figure>
 {body}
+{films}
 <div class="foot">Conceptual design and simulation study; no machine has been built. Values are
 simulation-derived and carry the feasibility gates named in each paper; superseded values are kept in
 the record with era labels. Informational only; not an offer of securities.
 &copy; 2026 Kronos Fusion Energy, Inc. &middot; Los Angeles, California.</div>
-</div></body></html>""".format(css=INDEX_CSS, total=TOTAL, body=body)
+</div></body></html>""".format(css=INDEX_CSS, total=TOTAL, body=body, films=FILMS)
 
 if __name__ == "__main__":
     written = 0
@@ -2499,7 +2550,22 @@ if __name__ == "__main__":
         written += 1
     with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:
         f.write(build_index())
-    print("Wrote %d whitepapers + index.html (%d total papers) to:" % (written, TOTAL))
+    # SEO: sitemap.xml, robots.txt, llms.txt
+    urls = ["/whitepapers"] + ["/whitepapers/KFE-WP%03d_%s.html" % (p["n"], p["slug"]) for p in PAPERS]
+    sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+          + "".join('  <url><loc>%s%s</loc><changefreq>monthly</changefreq></url>\n' % (SITE, u) for u in urls)
+          + '</urlset>\n')
+    open(os.path.join(HERE, "sitemap.xml"), "w", encoding="utf-8").write(sm)
+    open(os.path.join(HERE, "robots.txt"), "w", encoding="utf-8").write(
+        "User-agent: *\nAllow: /\nSitemap: %s/whitepapers/sitemap.xml\n" % SITE)
+    ll = ["# Kronos Fusion Energy — Whitepaper Library",
+          "> %d design-and-physics whitepapers; each traces to an open, reproducible deposit (CC BY 4.0)." % TOTAL, ""]
+    for p in PAPERS:
+        ll.append("- [%s](%s/whitepapers/KFE-WP%03d_%s.html): %s" %
+                  (dstrip(p["title"]), SITE, p["n"], p["slug"], dstrip(p["sub"])))
+    open(os.path.join(HERE, "llms.txt"), "w", encoding="utf-8").write("\n".join(ll) + "\n")
+    print("Wrote %d whitepapers + index.html (%d total papers) + sitemap/robots/llms to:" % (written, TOTAL))
     print(HERE)
     # sanity: slug uniqueness
     slugs = [p["slug"] for p in PAPERS]
