@@ -112,4 +112,3 @@
 ## Elsewhere
 - Site index: https://www.kronosfusionenergy.com/llms.txt
 - Full text index: https://www.kronosfusionenergy.com/llms-full.txt
-- Ask the open record: https://www.kronosfusionenergy.com/ask
